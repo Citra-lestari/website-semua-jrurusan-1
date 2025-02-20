@@ -1,0 +1,375 @@
+/* deklarasi variabel warna */
+:root {
+    --primary: #001f3f;
+    --bg: #f3f2f2;
+    --second: #3a6d8c;
+    --third: #6a9ab0;
+    --fourth: #ead8b1;
+    --fifth: #deaa79;
+    --sixth: #ffe6a9;
+    --seventh: #b1c29e;
+    --eigth: #659287;
+}
+
+/* reset halaman web */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+/* pengaturan untuk seluruh isi dari body */
+body{
+    font-family: 'poppins';
+    background-color: var(--bg);
+    color: #010101;
+    
+}
+
+/* navbar */
+nav {
+    background-color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--second);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav div img {
+    width: 60px;
+}
+
+nav ul li a{
+    font-weight: 600;
+    padding: 8px 0;
+    transform: all;
+    
+    color: #010101;
+}
+
+ ul li a:hover{
+    color: #3a6d8c;
+}
+
+ul li a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #3a6d8c;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+ul li a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.menu-icon {
+    font-size: 24px;
+    display: none;
+}
+
+#menu-list {
+    transition: 0.3s;
+}
+
+/* konten */
+.Judul{
+    padding: 10px;
+}
+.about {
+    padding: 4.1rem 7% 1.4rem;
+    background-color: white;
+    width: 90%;
+    margin-left: 5rem;
+
+}
+
+
+ h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    margin-top: 7rem;
+}
+
+ h1 span{
+    color: var(--second);
+}
+
+.about .row {
+    display: flex;
+}
+
+.about .row .about-photo {
+    flex: 1 1 165rem;
+}
+
+.about .row .about-photo img {
+    width: 96%;
+    margin-top: 3rem;
+}
+
+.about .row .content {
+    flex: 1 135rem;
+    padding: 0 1rem;
+}
+
+.about .row .content h2 {
+    font-size: 1.8rem;
+    margin-top: 4rem;
+}
+
+.about .row .content p {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+
+}
+
+/*Hal yg dipelajari*/
+.YP{
+    width: 100%;
+    padding: 10px;
+    background-color: var(--second);
+}
+.YP h1{
+    padding: 60px;
+}
+.YP .container{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+.YP2{
+    width: 25%;
+}
+.YP .container .YP2 .row img{
+    width: 230px;
+    height: 200px;
+    aspect-ratio: 4/3;
+    margin-left: 50px;
+}
+.YP .container .YP2 .row h3{
+    padding-top: 8px;
+    text-align: center;
+}
+.YP .container .YP2 .row p{
+    margin-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    
+}
+
+/* about section visi misi */
+.sectionkerja{
+    padding: 20px;
+}
+.mvv-container{
+    max-width: 75%;
+    margin: 50px auto 0;
+}
+.mvv-container .mvv-block{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.mvv-container .mvv-block .image{
+    flex: 0 0 auto;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    line-height: 0;
+}
+.mvv-container .mvv-block .image img{
+    width: 100%;
+    transition: .3s;
+    transform: scale(1);
+}
+.mvv-container .mvv-block .image:hover img{
+    transform: scale(1.05);
+}
+.mvv-container .mvv-block .content{
+    flex: 0 0 auto;
+    width: calc(100% - 400px);
+    box-sizing: border-box;
+    align-self: center;
+    
+}
+.mvv-container .mvv-block .content h5{
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--second);
+    margin-bottom: 10px;
+}
+.mvv-container .mvv-block .content p{
+    font-size: 15px;
+
+}
+/* Footer */
+footer {
+    background-color: var(--second);
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+}
+
+footer .sosials {
+    padding: 1rem 0;
+}
+
+footer .sosials a {
+    color: #ffff;
+    margin: 1rem;
+}
+
+footer .sosials a:hover,
+footer .links a:hover {
+    color: var(--primary);
+}
+
+footer .links {
+    margin-bottom: 1.4rem;
+}
+
+footer .links a {
+    color: #ffff;
+    padding: 0.7rem 1rem;
+}
+
+footer .credit {
+    font-size: 0.8rem;
+}
+
+footer .credit a {
+    color: #010101;
+    font-weight: 700;
+}
+
+/* media query untuk navbar pada layar laptop */
+@media only screen and (max-width: 1366px) {
+    html {
+        font-size: 85%;
+        scroll-behavior: smooth;
+    }
+
+    .card-list .card-link .card-title{
+        text-align: left;
+        margin-left: 52px;
+        position: relative; /* Pastikan posisi relatif atau static */
+        display: block; /* Pastikan display block atau flex */
+        float: none; /* Pastikan float tidak diatur */
+    }
+    
+      .card-list .card-link .badge{
+        margin-left: 51px;
+    }
+
+    .card-list .card-link .card-button{
+        margin-left: 51px;
+    }
+}
+
+
+/* media query untuk navbar pada layar laptop */
+@media only screen and (max-width: 1366px) {
+    html {
+        font-size: 85%;
+    }
+
+}
+
+/* media query untuk navbar pada layar tablet */
+@media only screen and (max-width: 768px) { /* mode tablet */
+    html {
+        font-size: 72.5%;
+    }
+
+    .about .row {
+        flex-wrap: wrap;
+    }
+
+    .about .row .about-photo img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row .content {
+        padding: 0;
+    }
+
+    .about .row .content h1 {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+/* media query untuk navbar pada layar mobile phone */
+@media (max-width: 450px) {
+    html {
+        font-size: 65%;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li:last-of-type{
+        padding-bottom: 10px;
+    }
+
+    nav ul.hidden {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+        align-items: center;
+    }
+}
+/*media untuk visi misi*/
+@media only screen and (min-width: 1024px) {
+    .mvv-container .mvv-block:nth-child(odd) .image{
+        order: 1;
+    }
+    .mvv-container .mvv-block:nth-child(even) .image{
+        order: 2;
+    }
+    .mvv-container .mvv-block:nth-child(odd) .content{
+        order: 2;
+        padding-left: 30px;
+    }
+    .mvv-container .mvv-block:nth-child(even) .content{
+        order: 1;
+        
+    }
+}

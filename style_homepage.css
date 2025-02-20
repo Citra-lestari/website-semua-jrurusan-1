@@ -1,0 +1,693 @@
+/* deklarasi variabel warna */
+:root {
+    --primary: #001f3f;
+    --bg: #f3f2f2;
+    --second: #3a6d8c;
+    --third: #6a9ab0;
+    --fourth: #ead8b1;
+    --fifth: #deaa79;
+    --sixth: #ffe6a9;
+    --seventh: #b1c29e;
+    --eigth: #659287;
+}
+
+/* reset halaman web */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* pengaturan untuk seluruh isi dari body */
+body{
+    font-family: 'poppins';
+    background-color: var(--bg);
+    color: #010101;
+    scroll-behavior: smooth;
+}
+
+/* navbar */
+nav {
+    background-color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--second);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav div img {
+    width: 60px;
+}
+
+nav ul li a{
+    font-weight: 600;
+    padding: 8px 0;
+    transform: all;
+    
+    color: #010101;
+}
+
+ ul li a:hover{
+    color: #3a6d8c;
+}
+
+ul li a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #3a6d8c;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+ul li a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.menu-icon {
+    font-size: 24px;
+    display: none;
+}
+
+#menu-list {
+    transition: 0.3s;
+}
+
+/* hero section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('skensa.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1; /* memastikan berada di belakang teks */
+    transition: filter 0.3s ease; /*transisi untuk blur jika diperlukan */
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Warna overlay hitam dengan opacity 40% */
+    background: linear-gradient(0deg, rgba(243, 242, 242) 3%, rgba(255, 255, 255, 0) 25%);
+    z-index: 2; /* memastikan di atas blur tetai di bawah teks */
+}
+
+.hero .content {
+    position: relative;
+    z-index: 3;
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+    text-align: left;
+    margin-top: 0;
+}
+
+.hero .content h1 {
+    font-size: 2.8em;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    line-height: 1.6;
+    font-weight: 700;
+    mix-blend-mode: difference;
+}
+
+.hero .content h1 span {
+    color: var(--second);
+    text-shadow: 1px 1px 3px rgba(26, 25, 25, 0.9);
+}
+
+.hero .content p{
+    font-size: 1.4rem;
+    margin-top: 0.3rem;
+    line-height: 1.4;
+    color: var(--fifth);
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* About Section */
+.about, 
+.kompetensi_keahlian,
+.contact {
+    padding: 8.1rem 7% 1.4rem;
+}
+
+.about h2,
+.kompetensi_keahlian h2,
+.contact h2 {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 3rem;
+}
+
+.about h2 span, 
+.kompetensi_keahlian h2 span,
+.contact h2 span {
+    color: var(--second);
+}
+
+.about .row {
+    display: flex;
+}
+
+.about .row .about-img {
+    flex: 1 1 165rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 135rem;
+    padding: 0 1rem;
+}
+
+.about .row .content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* about section visi misi */
+.about .mvv-container{
+    max-width: 100%;
+    margin: 3.125rem auto;
+}
+
+.about .mvv-container .mvv-block{
+    margin-bottom: 3.125rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.about .mvv-container .mvv-block .image{
+    flex: 0 0 auto;
+    width: 25rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    line-height: 0;
+}
+
+.about .mvv-container .mvv-block .image img{
+    width: 100%;
+    transition: .3s;
+    transform: scale(1);
+}
+
+.about .mvv-container .mvv-block .image:hover img{
+    transform: scale(1.05);
+}
+
+.about .mvv-container .mvv-block .content{
+    flex: 0 0 auto;
+    width: calc(100% - 25rem);
+    box-sizing: border-box;
+    align-self: center;
+    
+}
+
+.about .mvv-container .mvv-block .content h5{
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--second);
+    margin-bottom: 0.8rem;
+    margin-left: 1rem;
+}
+
+.about .mvv-container .mvv-block .content p{
+    font-size: 15px;
+    margin-left: 1rem;
+}
+
+/* detail sekolah */
+.about .details p{
+    font-weight: bold;
+    margin-left: 110px;
+    margin-top: 5rem;
+}
+
+table{
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.table2{
+    margin-top: 2rem;
+}
+
+th, td{
+    padding: 10px;
+    border: 1px solid #c0c0c0;
+    text-align: left;
+    vertical-align: top; /* tels rata atas dalam cel */
+}
+
+th{
+    background-color: var(--eigth);
+    font-weight: bold;
+    text-align: center; /* tes header di tengah */
+}
+
+/* style untuk header (logo dan judul) */
+.header-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-content img{
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.header-content h1{
+    margin-bottom: 5px;
+}
+
+/* style untuk kolom profile (foto dan keterangan) */
+.about .details .profile-column{
+    width: 300px;  /* lebar kolom profil */
+    text-align: center;
+    align-content: center;
+}
+
+/* Style untuk bingkai profil */
+.about .details .profile-column .profile-frame {
+    border: 2px solid #007bff; /* Warna bingkai biru */
+    padding: 10px; /* Padding di dalam bingkai */
+    border-radius: 5px; /* Radius sudut bingkai */
+    margin: 10px auto; /* Margin untuk bingkai */
+    width: fit-content; /* Lebar bingkai menyesuaikan konten */
+    display: flex; /* meenggunakan flexbox untuk mengatur tata letak */
+    flex-direction: column; /* mengatur arah felxbox menjadi vertikal */
+    align-items: center; /* mengatur item di tengah secara horizontal */
+}
+
+.profile-column img{
+    width: 280px;
+    height: 150px;
+    margin-bottom: 5px;
+}
+
+.profile-column .profile-frame p{
+    margin-top: 3px; /* spasi antara foto dan teks */
+    margin-left: 0;
+}
+
+/* style untuk kolom tabel informasi */
+.table2 a:link{
+    color: #6a9ab0; /* warna link sebelum di klik */
+    text-decoration: none; /* hilangkan garis bawah dafault */
+}
+
+.table2 a:visited{
+    color: purple; /* warna link setalah di klik */
+}
+
+.table2 a:hover{
+    color: #b1c29e; /* warna link saat kursor mouse diatasnya */
+    text-decoration: underline; /* tambahkan garis dibawh saat hover */
+}
+
+.table2 a:active{
+    color: green; /* warna link saat sedang di klik */
+}
+
+/* style tabel lomba */
+.about .lomba p{
+    margin-left: 110px;
+    font-weight: bold;
+}
+
+.lomba  .table3{
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.lomba .table3 .judul td{
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--eigth);
+}
+
+.lomba .table3 tr td{
+    text-align: justify;
+}
+
+/* jurusan section */
+.kompetensi_keahlian h2,
+.contact h2 {
+    margin-bottom: 1.7rem;
+}
+
+.kompetensi_keahlian p,
+.contact p {
+    text-align: center;
+    max-width: 40rem;
+    margin: auto;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+.kompetensi_keahlian .row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+
+.kompetensi_keahlian .row .jurusan-card {
+    text-align: center;
+    flex: 1;
+    max-width: 20%;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+.kompetensi_keahlian .row .jurusan-card-img {
+    border-radius: 50%;
+    width: 80%;
+    aspect-ratio: 1/1;
+}
+
+.kompetensi_keahlian .row .jurusan-card .jurusan-card-title {
+    margin-top: 1.5rem;
+}
+
+/* gaya tombol */
+.kompetensi_keahlian .row .jurusan-card-button {
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 0.4rem;
+    background-color: var(--third);
+    color: black;
+    border: none;
+    cursor: pointer; /* mengubah kursor menjadi pointer */
+    transition: all 0.3s ease; /* menambahkan transisi */
+}
+
+.jurusan-card-button:hover {
+    transform: scale(1.1); /* memperbesar sedikit tombol */
+}
+
+/* efek ketika klik tombol */
+.jurusan-card-button:active {
+    transform: scale(0.95); /* mengecilkan tombol saat diklik */
+    background-color: var(--primary); /* warna lebih gelap saat hover */
+    color: var(--fourth);
+}
+/* contact section */
+.contact .row {
+    display: flex;
+    margin-top: 5.2rem;
+    background-color: #3a6d8c;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--third);
+    border: 1px solid #eee;
+    padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.2rem;
+    background-color: none;
+    color: #090909;
+}
+
+.input-group .icons {
+    margin-right: 1.7rem;
+    align-items: center;
+}
+
+.contact .row form .btn {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background-color: var(--third);
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: var(--second);
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+}
+
+footer .sosials {
+    padding: 1rem 0;
+}
+
+footer .sosials a {
+    color: #ffff;
+    margin: 1rem;
+}
+
+footer .sosials a:hover,
+footer .links a:hover {
+    color: var(--primary);
+}
+
+footer .links {
+    margin-bottom: 1.4rem;
+}
+
+footer .links a {
+    color: #ffff;
+    padding: 0.7rem 1rem;
+}
+
+footer .credit {
+    font-size: 0.8rem;
+}
+
+footer .credit a {
+    color: #010101;
+    font-weight: 700;
+}
+
+/* media query untuk navbar pada layar laptop */
+@media only screen and (max-width: 1366px) {
+    html {
+        font-size: 85%;
+        scroll-behavior: smooth;
+    }
+
+    .card-list .card-link .card-title{
+        text-align: left;
+        margin-left: 52px;
+        position: relative; /* Pastikan posisi relatif atau static */
+        display: block; /* Pastikan display block atau flex */
+        float: none; /* Pastikan float tidak diatur */
+    }
+    
+      .card-list .card-link .badge{
+        margin-left: 51px;
+    }
+
+    .card-list .card-link .card-button{
+        margin-left: 51px;
+    }
+
+    .mvv-container .mvv-block:nth-child(odd).image{
+        order: 1;
+    }
+
+    .mvv-container .mvv-block:nth-child(even).image{
+        order: 2;
+    }
+
+    .mvv-container .mvv-block:nth-child(even).content{
+        order: 2;
+        padding-left: 30px;
+    }
+
+    .mvv-container .mvv-block:nth-child(even).content{
+        order: 1;
+        padding-right: 30px;
+    }
+}
+
+/* media query untuk navbar pada layar tablet */
+@media only screen and (max-width: 768px) { /* mode tablet */
+    html {
+        font-size: 72.5%;
+        scroll-behavior: smooth;
+    }
+
+    .about .row {
+        flex-wrap: wrap;
+    }
+
+    .about .row .about-img img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row .content {
+        padding: 0;
+    }
+
+    .about .row .content h3 {
+        margin-top: 0.8rem;
+        font-size: 1.5rem;
+    }
+
+    .about .mvv-container .content{
+        font-size: 1rem;
+    }
+
+    .kompetensi_keahlian p {
+        font-size: 1.2rem;
+    }
+
+    .contact p {
+        font-size: 1.2rem;
+    }
+
+    .contact .row {
+        flex-wrap: wrap;
+        margin-top: 5.2rem;
+    }
+
+    .contact .row .map {
+        height: 30rem;
+    }
+
+    .contact .row form {
+        padding-top: 0;
+    }
+}
+
+/* media query untuk navbar pada layar mobile phone */
+@media (max-width: 450px) {
+    html {
+        font-size: 65%;
+        scroll-behavior: smooth;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li:last-of-type{
+        padding-bottom: 10px;
+    }
+
+    nav ul.hidden {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@keyframes button-click {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
